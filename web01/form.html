@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>검색할 단어를 입력하세요.</h3>
+    <form>
+        <!-- form안에 input을 넣어야 버튼을 누르면 input의 내용들을 서버로 전송 -->
+        검색할 단어 <input type="text"> <input type="button" value="검색시작">
+    </form>
+    <hr>
+    <h3>로그인 화면</h3>
+    아이디 <input type="text"><br>
+    패스워드 <input type="text"><br>
+    <input type="submit" value="로그인 처리">
+
+    <hr>
+    <h3>회원가입 화면</h3>
+    가입할 id <input type="text"> <br>
+    가입할 pw <input type="password"> <br>
+    가입할 이름 <input type="text"> <br>
+    성별 <input type="radio" checked name="g"> 남
+         <input type="radio" name="g"> 여 <br>
+    취미 <input type="checkbox" name="h" checked> 달리기
+        <input type="checkbox" name="h"> 동영상
+        <input type="checkbox" name="h"> 인터넷<br>
+    전화번호 통신사 
+        <select>
+            <option>SKT</option>
+            <option>LGT</option>
+            <option>KT</option>
+            <option selected>알뜰폰</option>
+        </select>
+        <input type="number" placeholder="-를 제외하고 숫자만 입력"><br>
+        하고싶은말 <textarea cols="30" rows="5" placeholder="100글자이내로 써주세요."></textarea>
+        <br>
+        생년월일 <input type="date"><br>
+        좋아하는 색 <input type="color"> <br>
+        증명사진 <input type="file"> <br>
+</body>
+</html>

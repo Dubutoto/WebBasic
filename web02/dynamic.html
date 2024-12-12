@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 텍스트 변경</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d9e7f7; 
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 960px;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 10px;
+            transition: all 0.3s ease-in-out; /* 부드러운 전환 */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* 반응형 배경색 변경 (CSS로 가능) */
+        @media (max-width: 767px) {
+            .title {
+                background-color: lime;
+                color: purple;
+                font-size: 20px;
+            }
+        }
+        /* */
+        @media (min-width: 768px) and (max-width: 959px) {
+            .title {
+                background-color: black;
+                color: pink;
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 960px) {
+            .title {
+                background-color: yellow;
+                color: hotpink;
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title" id="responsiveText">반응형 디자인</div>
+        <div class="image-container">
+            <img src="sample.png" alt="예제 이미지">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 
+        function updateText() {
+            const width = window.innerWidth; // 현재 화면 너비
+            const titleElement = document.getElementById('responsiveText'); // 제목 요소
+
+            if (width <= 767) {
+                titleElement.textContent = "난 그린핑크";
+            } else if (width >= 768 && width <= 959) {
+                titleElement.textContent = "난 블랙핑크";
+            } else {
+                titleElement.textContent = "난 옐로우핑크";
+            }
+        }
+
+        // 처음 로드될 때 텍스트 변경
+        updateText();
+
+        // 화면 크기 변경 시 텍스트 업데이트
+        window.addEventListener('resize', updateText);
+    </script>
+</body>
+</html>
+

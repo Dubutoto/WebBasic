@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예쁘게 꾸민 웹 페이지</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* 연한 배경색 */
+        }
+
+        /* 전체 레이아웃 */
+        #total {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 상단 메뉴 바 */
+        #top {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #4caf50; /* 상단 메뉴 바 초록색 */
+            border-radius: 10px; /* 둥근 테두리 */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 음영 효과 */
+        }
+
+        #top nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #top nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #top nav ul li a:hover {
+            background-color: #3e8e41; /* 호버 시 어두운 초록색 */
+        }
+
+        /* 장바구니 현황 버튼 */
+        #top2 {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background-color: black;
+            color: yellow;
+            font-weight: bold;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 30px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* 버튼 음영 */
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        #top2:hover {
+            background-color: #333; /* 호버 시 색상 변화 */
+        }
+
+        /* 메인 콘텐츠 박스 */
+        #content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff; /* 흰색 배경 */
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 음영 효과 */
+            line-height: 1.6;
+        }
+
+        #content h2 {
+            text-align: center;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="total">
+        <!-- 상단 메뉴 -->
+        <div id="top">
+            <nav>
+                <ul>
+                    <li><a href="member.html">회원가입</a></li>
+                    <li><a href="product.html">제품정보</a></li>
+                    <li><a href="table.html">게시판</a></li>
+                    <li><a href="basket.html">장바구니</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- 장바구니 현황 버튼 -->
+        <div id="top2">장바구니 현황</div>
+
+        <!-- 메인 콘텐츠 -->
+        <div id="content">
+            <h2>내용이 들어가는 곳</h2>
+            <p>여기에 내용을 입력하세요.</p>
+          
+        </div>
+    </div>
+
+</body>
+</html>

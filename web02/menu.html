@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 메뉴 탭</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-bar {
+            background-color: #2db400; 
+            overflow: hidden;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-bar ul {
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+            display: flex; 
+            justify-content: center;
+        }
+
+        .nav-bar li {
+            margin: 0 10px; /* 항목별 간격 */
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px; /* 둥근 모서리 */
+            transition: background-color 0.3s;
+        }
+
+        /* 호버 효과 */
+        .nav-bar a:hover {
+            background-color: #1a8000; /* 어두운 초록색 */
+        }
+
+        /* 활성화된 메뉴 항목 */
+        .nav-bar a.active {
+            background-color: white;
+            color: #2db400;
+        }
+
+        /* 검색창 스타일 */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            font-size: 14px;
+            background-color: #1a8000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #145d00;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">메일</a></li>
+            <li><a href="#">카페</a></li>
+            <li><a href="#">블로그</a></li>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">사전</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </div>
+    </div>
+</body>
+</html>

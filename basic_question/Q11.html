@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout Example</title>
+  <style>
+    div {
+      text-align: center;
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+    }
+
+    .outer {
+      display: grid;
+      grid-template-rows: 100px 300px;
+      grid-template-columns: auto auto auto;
+      row-gap: 5px;
+      column-gap: 10px;
+      padding: 20px;
+    }
+
+    #d1 {
+      align-content: center;
+      background-color: rgb(218, 169, 177);
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    #d2, #d3, #d4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 95%;
+      height: 95%;
+      object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div id="d1">오늘의 할인 메뉴는?</div>
+    <div id="d2"><img src="food-1.png" alt="Food 1"></div>
+    <div id="d3"><img src="food-2.png" alt="Food 2"></div>
+    <div id="d4"><img src="food-3.png" alt="Food 3"></div>
+  </div>
+</body>
+</html>
