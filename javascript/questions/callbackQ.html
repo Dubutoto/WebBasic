@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 콜백 함수
+        function greeting(name) {
+            console.log(`Hello, ${name}!`);
+        }
+        function processUserInput(callback) {
+            const name = prompt("Enter your name:"); // 사용자 입력
+            callback(name);
+        }
+        processUserInput(greeting);
+
+        // 2. 비동기 작업
+        console.log("Start");
+        setTimeout(() => {
+            console.log("This is a delayed message");
+        }, 1000);
+        console.log("End");
+
+        // 3. 배열 메서드 (map)
+        const numbers = [1, 2, 3, 4, 5];
+        const doubled = numbers.map(number => number * 2);
+        console.log(doubled);
+
+        // 4. 버튼
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("myButton");
+            if (button) {
+                button.addEventListener("click", () => {
+                    console.log("Button clicked!");
+                });
+            } else {
+                console.error("Button not found!");
+            }
+        });
+
+        // 5. XMLHttpRequest
+    </script>
+    <button id="myButton">Click ME!!</button>
+</body>
+
+</html>

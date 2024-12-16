@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakao 지도 응용</title>
+</head>
+<body>
+    <h1>Kakao 지도에 마커 추가 및 장소 검색</h1>
+    <!-- 지도 컨테이너 -->
+    <div id="map" style="width:100%;height:500px;"></div>
+    <input type="text" id="searchInput" placeholder="장소를 입력하세요" style="width:200px; margin:10px;">
+    <button onclick="searchPlace()">장소 검색</button>
+
+    <!-- Kakao 지도 SDK -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d07b029ded15569ea3524a1f7e912375"></script>
+
+    <script>
+        // 1. 지도 생성
+        var container = document.getElementById('map'); // 지도 컨테이너
+        var options = {
+            center: new kakao.maps.LatLng(37.566826, 126.9786567), // 서울 중심 좌표
+            level: 3 // 확대/축소 레벨
+        };
+        var map = new kakao.maps.Map(container, options);
+
+        // 2. 마커 추가
+        var markerPosition  = new kakao.maps.LatLng(37.566826, 126.9786567); // 마커 위치
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map); // 지도에 마커 표시
+
+        // 3. 장소 검색 기능 추가
+        var ps = new kakao.maps.services.Places(); // 장소 검색 객체
+
+        function searchPlace() {
+            var keyword = document.getElementById("searchInput").value;
+
+            if (!keyword.trim()) {
+                alert("검색어를 입력하세요.");
+                return;
+            }
+
+            // 장소 검색
+            ps.keywordSearch(keyword, function(data, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    var coords = new kakao.maps.LatLng(data[0].y, data[0].x);
+
+                    // 지도 중심 이동
+                    map.setCenter(coords);
+
+                    // 기존 마커 제거
+                    marker.setMap(null);
+
+                    // 새로운 마커 추가
+                    marker = new kakao.maps.Marker({
+                        position: coords
+                    });
+                    marker.setMap(map);
+
+                    alert("장소를 찾았습니다: " + data[0].place_name);
+                } else {
+                    alert("장소를 찾을 수 없습니다.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

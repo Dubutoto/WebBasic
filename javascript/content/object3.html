@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const yeouidoParkCenter = {
+        // 변수 5개
+        name: "여의도파크센터 ",
+        type: "오피스텔",
+        totalUnits: 246,
+        areaRange: "127.25~495.05㎡",
+        recentTransaction: {
+            size: "202㎡",
+            price: "16억 4,500",
+            date: "21.10.06"
+        },
+
+        // 메서드 2개
+        info: function() {
+        console.log(`Name: ${this.name}`);
+        console.log(`Type: ${this.type}`);
+        console.log(`Total Units: ${this.totalUnits}`);
+        console.log(`Area Range: ${this.areaRange}`);
+        },
+
+        getRecentTransaction: function() {
+        return `Recent Transaction: ${this.recentTransaction.size} -
+        ${this.recentTransaction.price} (Date: ${this.recentTransaction.date})`;
+        }
+        };
+
+        // 메서드 사용 예시
+        yeouidoParkCenter.info();
+        console.log(yeouidoParkCenter.getRecentTransaction());
+    </script>
+
+</body>
+</html>

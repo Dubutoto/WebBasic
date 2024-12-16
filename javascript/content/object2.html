@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name : "Alice",
+            greet: function(){
+                   alert(`안녕! 내이름은 ${this.name}`); 
+            },
+
+            bye(){
+                alert(`${this.name} 야! 바이바이! `);
+            }
+        };
+
+        person.greet();
+        person.bye();
+
+        let result = person.info();
+        alert("리턴값은" + result);
+
+        //변수명과 함수명을 동일하게 쓰지 마세요.(동일 스코프 내에서)
+    </script>
+</body>
+</html>

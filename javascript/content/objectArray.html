@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const people = [
+            { name: "Alice", age: 17 },
+            { name: "Bob", age: 22 },
+            { name: "Charlie", age: 15 },
+            { name: "David", age: 19 }
+        ];
+
+        const adults = people.filter(person => person.age >= 18);
+        console.log(adults);
+        // 출력: [{ name: "Bob", age: 22 }, { name: "David", age: 19 }]
+    </script>
+</body>
+
+</html>

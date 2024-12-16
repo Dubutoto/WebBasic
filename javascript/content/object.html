@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const person = {
+            name : "John",
+            age : 30,
+            isStudent : false 
+        };
+
+        console.log(person.name+" "+person.age);
+        person.job  = "개발자";
+        console.log(person);
+        console.log(person.job);
+        console.log("age" in person); // true or false
+
+        let keys = Object.keys(person); //키
+        console.log(keys);
+        let values = Object.values(person); //값
+        console.log(values);
+        let entries = Object.entries(person); //2차원 배열
+        console.log(entries);
+
+        alert(person); // alert 로는 객체를 제대로 확인 할 수 없다.
+    </script>
+</head>
+<body>
+</body>
+</html>

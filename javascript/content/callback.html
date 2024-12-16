@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 이름 입력받기
+        let name = prompt("이름을 입력하세요");
+
+        // 이름이 입력되었는지 확인
+        if (name) {
+            alert(name + "님 환영합니다");
+        } else {
+            alert("이름이 입력되지 않았습니다!");
+        }
+
+        // bye 함수 선언
+        function bye(name) {
+            alert("안녕 잘가 " + name + "아!");
+        }
+
+        // info 함수 선언
+        function info(action) {
+            if (typeof action === "function") {
+                action(name);
+            } else {
+                alert("유효한 함수가 전달되지 않았습니다.");
+            }
+        }
+
+        // info 함수에 bye 전달하여 호출
+        info(bye);
+    </script>
+</body>
+
+</html>

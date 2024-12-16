@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="liveInput">Type something:</label>
+        <input type="text" id="liveInput" placeholder="Start typing...">
+        <button type="button" id="displayBtn">Display Input</button>
+    </form>
+
+    <form id="colorForm">
+        <input type="radio" name="color" value="Red"> Red
+        <input type="radio" name="color" value="Blue"> Blue
+        <input type="radio" name="color" value="Green"> Green <br>
+        <button type="button" id="colorSubmit">Submit</button>
+    </form>
+
+    <form id="checkboxForm">
+        <input type="checkbox" name="fruit" value="Apple"> Apple<br>
+        <input type="checkbox" name="fruit" value="Banana"> Banana<br>
+        <input type="checkbox" name="fruit" value="Cherry"> Cherry<br>
+        <button type="button" id="checkSubmit">Submit</button>
+    </form>
+    <hr>
+    <p id="output"></p>
+
+    <script>
+        let btn = document.getElementById("displayBtn");
+        btn.addEventListener('click', function () {
+            let data = document.getElementById("liveInput").value;
+            let pTag = document.getElementById("output");
+            if (data) {
+                pTag.textContent = "당신의 데이터는 " + data;
+            } else {
+                pTag.textContent = "데이터 입력되지 않음";
+            }
+        });
+
+        let btn2 = document.getElementById("colorSubmit");
+        btn2.addEventListener('click', function () {
+            let color = document.querySelector("input[name = 'color']:checked");
+            let pTag = document.querySelector('#output');
+            if (color) {
+                pTag.textContent = "너의 색은 " + color.value;
+            } else {
+                pTag.textContent = '선택한 색이 없음.';
+            }
+        });
+
+        let btn3 = document.getElementById("checkSubmit");
+        btn3.addEventListener("click", function () {
+            let checks = document.querySelectorAll("input[name='fruit']:checked");
+            //NodeList, TagList객체 tag, tag, tag
+            let pTag = document.querySelector('#output');
+            for (let i = 0; i < checks.length; i++) {
+                console.log(checks[i].value);
+                result.push(checks[i].value);
+            }
+
+            alert(result);
+            alert(result.toString());
+            alert(result.join("---"));
+        });
+
+
+    </script>
+</body>
+
+</html>
