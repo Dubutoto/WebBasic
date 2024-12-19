@@ -1,0 +1,9 @@
+Hello, this is a sample text file.
+It contains multiple lines to demonstrate file reading and writing in Node.js.
+
+Line 1: Learning Node.js file system module.
+Line 2: Exploring synchronous and asynchronous methods.
+Line 3: fs.readFileSync for blocking operations.
+Line 4: fs.readFile for non-blocking operations.
+
+Thank you for using this sample file!

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1번 -->
+    <form>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button type="button" onclick="doubleNumber()">Double the number</button>
+    </form>
+
+    <script>
+        function doubleNumber() {
+            const numberValue = document.getElementById('numberInput').value;
+            if (numberValue) {
+                const doubledValue = Number(numberValue) * 2;
+                alert("Doubled value: " + doubledValue);
+            } else {
+                alert("Please enter a valid number!");
+            }
+        }
+    </script>
+
+    <!-- 2번 -->
+    <form>
+        <label for="textInput">Enter a sentence:</label>
+        <input type="text" id="textInput" placeholder="Type here...">
+        <button type="button" onclick="processText()">Process</button>
+    </form>
+    <p id="outputUppercase"></p>
+    <p id="outputLength"></p>
+
+    <script>
+        function processText() {
+            const textInput = document.getElementById('textInput').value;
+            const outputUppercase = document.getElementById('outputUppercase');
+            const outputLength = document.getElementById('outputLength');
+
+            if (textInput) {
+                // 변환: 대문자로 변경
+                const uppercasedText = textInput.toUpperCase();
+                // 길이 계산
+                const textLength = textInput.length;
+
+                // 결과 출력
+                outputUppercase.textContent = `Uppercase: ${uppercasedText}`;
+                outputLength.textContent = `Length: ${textLength}`;
+            } else {
+                // 입력값이 없을 때 메시지 출력
+                outputUppercase.textContent = "Please enter a sentence!";
+                outputLength.textContent = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

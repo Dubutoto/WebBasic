@@ -10,6 +10,7 @@ p.then((msg) => {
     const sum = num1 + num2;
     return sum;
 })
+
     .then((msg) => {
         console.log(`2 ==> ${msg}`);
         console.log("두 수를 랜덤하게 생성하여 곱한 값을 리턴");
